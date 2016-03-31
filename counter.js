@@ -9,6 +9,5 @@ function counter(){
     
     return sumador;
 }
-var q = require("data");
 
-alert(q.users.name["user1"]);
+
