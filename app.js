@@ -38,7 +38,7 @@ function f(){
     var filas = data.users.filter(filterByGenre,genre).map(getRow).reduce(combineRows);
     var tbody = wd.document.getElementById('list');
     tbody.innerHTML = filas;
-    
+     
 }
     
 })(DATA, window);
