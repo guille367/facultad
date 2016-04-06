@@ -27,11 +27,27 @@ function f(){
                 </tr>`;
     });*/
     
-    var filas = data.users.map(getRow);
+    //var filas = data.users.filter(filterByGenre,'F').map(getRow).reduce(combineRows);
+    var filas = data.users.filter(filterByGenre,'F').map(getRow).reduce(combineRows);
     var tbody = wd.document.getElementById('list');
-    tbody.innerHTML = filas.join(" ");
+    //tbody.innerHTML = filas.join(" ");
+    tbody.innerHTML = filas;
+    
+    aplicarFiltro = function(genre){
+    
+    var filas = data.users.filter(filterByGenre,genre).map(getRow).reduce(combineRows);
+    var tbody = wd.document.getElementById('list');
+    tbody.innerHTML = filas;
+    
+}
     
 })(DATA, window);
+
+var aplicarFiltro;
+
+function filterByGenre(user){
+    return user.genre == this;
+}
 
 function getRow(user){
 
@@ -45,4 +61,8 @@ function getRow(user){
     row += "</tr>";
     
     return row;
+}
+
+function combineRows(anterior, actual){
+    return anterior + actual;
 }

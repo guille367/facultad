@@ -6,7 +6,15 @@
     <body>
         <form>
             <h1>Clase 2</h1>
-
+            <select onchange="aplicarFiltro(this.value);">
+                <option value="F">Femenino</option>
+                <option value="M">Masculino</option>
+            </select>
+            
+            <br>
+            <hr>
+            <br>
+            
             <table border="1">
                 <thead>
                     <tr>
@@ -18,7 +26,7 @@
                 </thead>
                 <tbody id="list">
 
-                </body>
+                </tbody>
             </table>
         </form>
     
