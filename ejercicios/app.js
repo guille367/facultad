@@ -90,7 +90,19 @@ var MAIN = (function (DATA) {
   // cada property del objeto es el nombre de una etiqueta
   // y el value es la cantidad de usuarios que tienene esa etiqueta
   lib.tagCloud = function (age) {
-
+      var objeto = {};
+      
+      DATA
+          .map(function(e){
+         for(prop in e){
+             if(objeto[prop] == undefined)
+                 objeto[prop] = 1;
+             else
+                 objeto[prop]++;
+         } 
+          
+      });
+      return objeto;
   };
 
   return lib;
