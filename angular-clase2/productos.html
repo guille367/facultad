@@ -49,7 +49,7 @@
     </nav>
 
     <!-- Page Content -->
-    <div ng-controller="MainController" class="container">
+    <div ng-controller="ControllerProductos" class="container">
 
         <div class="row">
             
@@ -79,7 +79,7 @@
                   </thead>
                     
                   <tbody>
-                    <tr ng-repeat="prod in productos">
+                    <tr ng-repeat="prod in productos | filter:filterProducts ">
                         <th>{{prod.name}}</th>
                         <th>{{prod.brand | uppercase}}</th>
                         <th>{{prod.type}}</th>
@@ -136,8 +136,8 @@
 
     <script src="bower_components/angular/angular.js"></script>
     <script src="js/app.js"></script>
-    <script src="js/services/UsuarioService.js"></script>
-    <script src="js/controllers/MainController.js"></script>
+    <script src="js/services/ProductosService.js"></script>
+    <script src="js/controllers/ProductosController.js"></script>
     
 </body>
 
