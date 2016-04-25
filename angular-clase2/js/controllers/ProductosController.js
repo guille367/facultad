@@ -10,10 +10,10 @@ app.controller("ControllerProductos",function($scope,ProductosService){
         $scope.productos = productos;
     });
     
-    var filterProducts = { type : "" };
+    $scope.filterProducts = { type : "" };
     
     $scope.filterByType = function(tipo){
-        return filterProducts.type = tipo !== "" ? tipo : ""; 
+        $scope.filterProducts.type = tipo !== "" ? tipo : ""; 
     };
     
 });
