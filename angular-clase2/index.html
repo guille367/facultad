@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="app">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Index - Personas</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+    body {
+        padding-top: 70px;
+        
+        /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    }
+    .margin-top{
+        margin-top: 25px;
+    }        
+    </style>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">AngularJS</a>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div ng-controller="MainController" class="container">
+
+        <div class="row">
+            
+            <div class="col-md-3">
+                <div class="panel panel-default margin-top">
+                  <div class="panel-heading">Filtrar por país</div>
+                  <div class="panel-body">
+                    <ul class="nav nav-pills nav-stacked">
+                      <li ng-repeat="pais in paises" role="presentation" class="active">
+                          <a href="#" ng-click="filterByCountry(pais)">{{pais}}</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+            </div>
+            
+            <div class="col-md-9">
+                <table class="table table-condensed">
+                  <thead>
+                    <tr>
+                        <th>age</th>
+                        <th>name</th>
+                        <th>company</th>
+                        <th>email</th>
+                        <th>actions</th>
+                    </tr>
+                  </thead>
+                    
+                  <tbody>
+                    <tr ng-repeat="usuario in usuarios | filter:filterActive track by usuario._id">
+                        <th>{{usuario.age}}</th>
+                        <th>{{usuario.name | uppercase}}</th>
+                        <th>{{usuario.company}}</th>
+                        <th>{{usuario.email}}</th>
+                        <th>
+                            <button class="btn btn-danger btn-sm">Delete</button>
+                            <button class="btn btn-info btn-sm">Edit</button>
+                        </th>
+                    </tr>                      
+                  </tbody>                    
+                </table>
+            </div> 
+            
+        </div>
+    </div>
+    
+    <div id="user-modal" class="modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Editar Usuario</h4>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="exampleInputEmail1">age</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">name</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">company</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">email</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              </div>               
+            </form>
+              
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Guardar</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    
+    <!-- /.container -->
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/services/UsuarioService.js"></script>
+    <script src="js/controllers/MainController.js"></script>
+    
+</body>
+
+</html>
