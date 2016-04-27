@@ -1,0 +1,51 @@
+<html ng-app="app">
+    <head>
+        <title>Clase 1 - AngularJS</title>
+        <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+        <style>
+            #container .panel{
+                margin: 20px;
+            }
+        </style>
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script>
+          
+			var app = angular.module("app", []);
+			
+			app.controller("MainController", function($scope){
+              
+				$scope.title = "Main Panel";
+				$scope.name = "Angular";
+              
+                $scope.name += " rules!!!";
+              
+			});
+			
+        </script>
+    </head>
+    <body>
+        <div id="container" class="container">
+            <h1>Intro AngularJS</h1>
+          
+            <div ng-controller="MainController"
+                 class="panel panel-default">
+            
+                <div class="panel-heading">
+					{{title}}
+                </div>
+                
+                <div class="panel-body">
+                    
+                    <input ng-model="name" 
+                           type="text" 
+                           class="form-control"/>
+                    
+                    <h1>Hola {{name}}</h1>
+                   <h1>Hola {{name}}</h1>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </body>
+</html>
