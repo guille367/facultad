@@ -12,6 +12,7 @@
           
 			var app = angular.module("app", []);
 			
+<<<<<<< HEAD
 			app.controller("MainController", function($scope){
               
 				$scope.title = "Main Panel";
@@ -21,10 +22,32 @@
               
 			});
 			
+=======
+			app.controller("MainController", function(){
+				/*
+				* $scope.main = {};
+				* this = $scope.main;
+				*/
+				
+				this.title = "Main Panel";
+				this.name = "Angular";
+			});
+			
+			app.controller("ChildController", function($scope){
+				/*
+				* $scope.child = {};
+				* this = $scope.child;
+				*/
+				
+				this.title = "Child Panel";
+			});			
+			
+>>>>>>> 4ce6cb75141f85a2b2c3bacbf2059c52c1458b6a
         </script>
     </head>
     <body>
         <div id="container" class="container">
+<<<<<<< HEAD
             <h1>Intro AngularJS</h1>
           
             <div ng-controller="MainController"
@@ -32,10 +55,21 @@
             
                 <div class="panel-heading">
 					{{title}}
+=======
+            
+            <h1>Intro AngularJS</h1>
+            
+            
+            <div ng-controller="MainController as main" class="panel panel-default">
+            
+                <div class="panel-heading">
+					{{main.title}}
+>>>>>>> 4ce6cb75141f85a2b2c3bacbf2059c52c1458b6a
                 </div>
                 
                 <div class="panel-body">
                     
+<<<<<<< HEAD
                     <input ng-model="name" 
                            type="text" 
                            class="form-control"/>
@@ -44,6 +78,24 @@
                    <h1>Hola {{name}}</h1>
                     
                 </div>
+=======
+                    <input ng-model="main.name" type="text" class="form-control"/>
+                    
+                    <h1>Hola {{main.name}}</h1>
+                    
+                </div>
+                
+                
+                <div ng-controller="ChildController as child" class="panel panel-default">
+                    <div class="panel-heading">
+						{{child.title}}
+                    </div>
+                    <div class="panel-body">
+                        <input ng-model="main.name" type="text" class="form-control"/>
+                        <h1>Hola {{main.name}}</h1>
+                    </div>                 
+                </div>
+>>>>>>> 4ce6cb75141f85a2b2c3bacbf2059c52c1458b6a
             </div>
             
         </div>

@@ -16,4 +16,8 @@ app.controller("ControllerProductos",function($scope,ProductosService){
         $scope.filterProducts.type = tipo !== "" ? tipo : ""; 
     };
     
+<<<<<<< HEAD
 }); 
+=======
+});
+>>>>>>> 4ce6cb75141f85a2b2c3bacbf2059c52c1458b6a

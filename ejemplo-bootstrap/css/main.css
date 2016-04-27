@@ -1,0 +1,43 @@
+/* Estilos especificos del proyecto */
+
+.banner {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    background-color: #ddd;
+}
+
+.mi-nav {
+    border-radius: 0px;
+}
+
+.submenu {
+    padding: 25px;
+}
+
+.content .imagenes {
+text-align: center;
+}
+
+.content .imagenes img {
+    margin: 10px;
+}
+
+.footer {
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #ddd;
+}
+
+.footer .copyright{
+    text-align: left;
+}
+
+.footer .enlaces {
+    text-align: right;
+}
+
+.footer .enlaces a {
+    margin-right: 15px;
+}
