@@ -1,0 +1,43 @@
+<div class="row">
+
+		<div class="col-md-3">
+				<div class="panel panel-default margin-top">
+					<div class="panel-heading">Filtrar por país</div>
+					<div class="panel-body">
+						<ul class="nav nav-pills nav-stacked">
+							<li ng-repeat="pais in paises" role="presentation" class="active">
+									<a ng-click="filterByCountry(pais)">{{pais}}</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+		</div>
+
+		<div class="col-md-9">
+				<table class="table table-condensed">
+					<thead>
+						<tr>
+								<th>age</th>
+								<th>name</th>
+								<th>company</th>
+								<th>email</th>
+								<th>actions</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr ng-repeat="usuario in usuarios | filter:filterActive track by usuario._id">
+								<th>{{usuario.age}}</th>
+								<th>{{usuario.name | uppercase}}</th>
+								<th>{{usuario.company}}</th>
+								<th>{{usuario.email}}</th>
+								<th>
+										<button class="btn btn-danger btn-sm">Delete</button>
+										<button class="btn btn-info btn-sm">Edit</button>
+								</th>
+						</tr>                      
+					</tbody>                    
+				</table>
+		</div> 
+
+</div>
